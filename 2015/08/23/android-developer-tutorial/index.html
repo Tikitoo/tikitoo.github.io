@@ -1,0 +1,782 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Android 开发,Android 入门,自学Android,Android 教程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="之前在知乎上回答的问题——《初学者学习 Android 开发，有什么好网站推荐？》，就挑了一些大家公认比较好的资源，所以今天就把它整理成博客了，再好好整理一些好的资料分享给大家。其实我觉得，相对于稍微有点经验的人来说，初学者更需要指导，因为初学者没有好的知识体系，所以会走不少弯路，所以我就以我的经验，和在微博，论坛上大家公认的资料整理出来，也希望能帮到大家。
+
+Java
+O’Reilly：Head">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写给Android 开发的入门教程">
+<meta property="og:url" content="http://tikitoo.github.io/2015/08/23/android-developer-tutorial/index.html">
+<meta property="og:site_name" content="Tikitoo Blog">
+<meta property="og:description" content="之前在知乎上回答的问题——《初学者学习 Android 开发，有什么好网站推荐？》，就挑了一些大家公认比较好的资源，所以今天就把它整理成博客了，再好好整理一些好的资料分享给大家。其实我觉得，相对于稍微有点经验的人来说，初学者更需要指导，因为初学者没有好的知识体系，所以会走不少弯路，所以我就以我的经验，和在微博，论坛上大家公认的资料整理出来，也希望能帮到大家。
+
+Java
+O’Reilly：Head">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg">
+<meta property="og:updated_time" content="2016-01-26T14:59:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="写给Android 开发的入门教程">
+<meta name="twitter:description" content="之前在知乎上回答的问题——《初学者学习 Android 开发，有什么好网站推荐？》，就挑了一些大家公认比较好的资源，所以今天就把它整理成博客了，再好好整理一些好的资料分享给大家。其实我觉得，相对于稍微有点经验的人来说，初学者更需要指导，因为初学者没有好的知识体系，所以会走不少弯路，所以我就以我的经验，和在微博，论坛上大家公认的资料整理出来，也希望能帮到大家。
+
+Java
+O’Reilly：Head">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://tikitoo.github.io/2015/08/23/android-developer-tutorial/"/>
+
+  <title> 写给Android 开发的入门教程 | Tikitoo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72517765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?dd585a1672bc69dcafe1cab0ae54376a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tikitoo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resources">
+          <a href="/resources" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            资源
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            朋友
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                写给Android 开发的入门教程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-23T14:45:34+08:00" content="2015-08-23">
+              2015-08-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/23/android-developer-tutorial/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/23/android-developer-tutorial/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前在知乎上回答的问题——《<a href="http://www.zhihu.com/question/19611325" target="_blank" rel="external">初学者学习 Android 开发，有什么好网站推荐？</a>》，就挑了一些大家公认比较好的资源，所以今天就把它整理成博客了，再好好整理一些好的资料分享给大家。其实我觉得，相对于稍微有点经验的人来说，初学者更需要指导，因为初学者没有好的知识体系，所以会走不少弯路，所以我就以我的经验，和在微博，论坛上大家公认的资料整理出来，也希望能帮到大家。</p>
+<hr>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ul>
+<li><a href="http://item.jd.com/10100190.html" target="_blank" rel="external">O’Reilly：Head First Java（中文版）</a></li>
+<li><a href="http://yun.baidu.com/s/1dD5RRQ5" target="_blank" rel="external">Mars 的Java4Android</a></li>
+</ul>
+<p>其实我倒觉得，初学者可以读一些浅显易懂的书，在以后的学习中，可以再加以巩固，可以读一些深一点的书。</p>
+<hr>
+<h2 id="Android-书籍"><a href="#Android-书籍" class="headerlink" title="Android 书籍"></a>Android 书籍</h2><ul>
+<li><a href="http://item.jd.com/11504254.html" target="_blank" rel="external">郭霖《第一行代码》</a></li>
+<li><a href="http://item.jd.com/11431307.html" target="_blank" rel="external">Brian Hardy，Bill Phillips《 Android编程权威指南》</a></li>
+</ul>
+<p>这两本特别适合初学者开入门的。不管是我自身还是从论坛，微博上，对它们的评论都不错。</p>
+<hr>
+<h2 id="Android-教程"><a href="#Android-教程" class="headerlink" title="Android 教程"></a>Android 教程</h2><ul>
+<li><a href="http://developer.android.com/training/index.html" target="_blank" rel="external">Android 官方入门指南</a></li>
+<li><a href="http://hukai.me/android-training-course-in-chinese/" target="_blank" rel="external">序言 | Android官方培训课程中文版(v0.9.4)</a></li>
+<li><a href="https://github.com/codepath/android_guides/wiki" target="_blank" rel="external">Home · codepath/android_guides Wiki · GitHub</a></li>
+</ul>
+<p>对于教程，我的观点是能读官方，就不要读其他，第二个是官方指南的中文版，算是中文翻译中比较好的了。<br>而Codepath 的入门指南，也可以和官方相比，也是不逊色的，相比较官方的，它的教程更具有实战意义，每一个都是一个小Demo，做完会让你很有成就感。</p>
+<hr>
+<h2 id="Android-视频"><a href="#Android-视频" class="headerlink" title="Android 视频"></a>Android 视频</h2><ul>
+<li><a href="http://marschen.com/portal.php" target="_blank" rel="external">Mars——Android 开发视频教程</a></li>
+<li><a href="http://pan.baidu.com/s/1qWAWU52" target="_blank" rel="external">黎活明——8天快速掌握Android视频</a></li>
+<li><a href="http://www.imooc.com/course/programdetail/pid/33" target="_blank" rel="external">慕课网——Android 开发视频</a></li>
+<li><a href="http://android.jikexueyuan.com/" target="_blank" rel="external">极客学院——Android开发,安卓开发教程</a></li>
+</ul>
+<p>这些你都不知道，就有点孤陋寡闻了。</p>
+<hr>
+<h2 id="Android-开发工具"><a href="#Android-开发工具" class="headerlink" title="Android 开发工具"></a>Android 开发工具</h2><ul>
+<li><p><a href="https://github.com/inferjay/AndroidDevTools" target="_blank" rel="external">inferjay/AndroidDevTools</a><br>对于不能科学上网来说，可以使用这里提供的国内镜像来下载各种开发工具和SDK。</p>
+</li>
+<li><p>Android Studio<br>如果之前还有纠结的话，那么现在你还不使用Android Studio，就说不过去了。Bug 也变得少了，性能优化，版本迭代也特别快。对于以前没有使用过AS 的人来说，当然学习曲线也是比较陡峭的。我推荐两篇文章可以来入门，以后遇到的问题，可以到时候来搜索解决。</p>
+<ul>
+<li><a href="http://stormzhang.com/" target="_blank" rel="external">Stormzhang - Android Studio系列教程</a></li>
+<li><a href="http://www.jianshu.com/p/36cfa1614d23" target="_blank" rel="external">Tikitoo - Android Studio 入门指南</a></li>
+</ul>
+<hr>
+<h2 id="Android-开源App"><a href="#Android-开源App" class="headerlink" title="Android 开源App"></a>Android 开源App</h2></li>
+<li><a href="https://github.com/googlesamples?utf8=%E2%9C%93&amp;query=android" target="_blank" rel="external">Search Android - Google Samples</a><br>谷歌官方会经常推出一些Android 新技术的Demo，比如每年的IO App 等等。</li>
+<li>Android Apidemos<br>下载SDK 之后，会在 <code>&lt;sdk-insall-folder&gt;/samples/</code> 中查看系统自带的好多Demo。</li>
+<li><a href="http://www.zhihu.com/question/26687642" target="_blank" rel="external">有没有适合 Android 开发初学者的 App 源码推荐？</a><br>知乎上有好多大牛推荐的，也可以值得关注一下，找到适合自己的来练练手。</li>
+</ul>
+<hr>
+<h2 id="Android-学习经验分享"><a href="#Android-学习经验分享" class="headerlink" title="Android 学习经验分享"></a>Android 学习经验分享</h2><p>还有一些大牛对入门者的入门文章，我觉得对于初学者来说，会避免不少弯路。</p>
+<ul>
+<li><a href="http://www.stormzhang.com/android/2014/07/07/learn-android-from-rookie/" target="_blank" rel="external">StormZhang - Android学习之路</a></li>
+<li><a href="http://www.jianshu.com/p/2ee0e74abbdf" target="_blank" rel="external">Tikitoo - 我是如何自学Android，资料分享</a></li>
+<li><a href="http://drakeet.me/android_base_road" target="_blank" rel="external">Drakeet - 我推荐的 Android 基础学习路线</a></li>
+<li><a href="https://github.com/futurice" target="_blank" rel="external">futurice</a><a href="https://github.com/futurice/android-best-practices" target="_blank" rel="external">android-best-practices - Github</a></li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作为一个程序员，学会科学上网应该是一种本能，这样就会减少很多不必要的麻烦。</p>
+<p>要善于利用搜索引擎，StackOverflow。使用英文关键词搜索，你遇到的99% 的问题，别人都会遇到。</p>
+<p>要时刻关注Android 的最新动态。比如Android 的官方博客，还有各种Android Weekly，在微博，知乎关注一些Android 牛人，看他们分享的东西和回答的问题，要让自己与时俱进，才不会被淘汰。</p>
+<p>加一些QQ 群，有不会可以问问，相互交流。</p>
+<p>Alway Be Coding。当敲的代码多了，你的能力才能慢慢提升，切忌眼高手低。</p>
+<hr>
+<blockquote>
+<p>本文作者：<a href="http://weibo.com/lyf0306" target="_blank" rel="external">Tikitoo</a><br>本文出处：<a href="http://tikitoo.me/2015/08/23/android-developer-tutorial/" target="_blank" rel="external">http://tikitoo.me/2015/08/23/android-developer-tutorial/</a><br>转载请在开头注明<code>作者详细信息</code>和<code>本文出处</code>。</p>
+<p>欢迎关注我的微信公众号，分享<code>Android 开发</code>和<code>互联网内容</code>。<br>微信号：<code>AndroidMate</code><br>公众号：<code>安卓同学</code><br><img src="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg" alt="安卓同学"></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Tikitoo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注我的公众号：安卓同学（ID：AndroidMate）</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Android-开发/" rel="tag">#Android 开发</a>
+          
+            <a href="/tags/Android-入门/" rel="tag">#Android 入门</a>
+          
+            <a href="/tags/自学Android/" rel="tag">#自学Android</a>
+          
+            <a href="/tags/Android-教程/" rel="tag">#Android 教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/03/my-liqi/" rel="next" title="Tikitoo：来使用利器来提高效率吧">
+                <i class="fa fa-chevron-left"></i> Tikitoo：来使用利器来提高效率吧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/13/android-studio-live-templates-md/" rel="prev" title="Android Studio live templates 的使用">
+                Android Studio live templates 的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/23/android-developer-tutorial/"
+           data-title="写给Android 开发的入门教程" data-url="http://tikitoo.github.io/2015/08/23/android-developer-tutorial/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/mw690/68622377jw1etahntwg7pj2050050q2q.jpg"
+               alt="Tikitoo" />
+          <p class="site-author-name" itemprop="name">Tikitoo</p>
+          <p class="site-description motion-element" itemprop="description">Android 开发工程师，互联网爱好者。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tikitoo" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/tikitoo" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lyf0306" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/tikitoo" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  Douban
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tikitoo" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/c35153600475/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-jianshu"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-书籍"><span class="nav-number">2.</span> <span class="nav-text">Android 书籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-教程"><span class="nav-number">3.</span> <span class="nav-text">Android 教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-视频"><span class="nav-number">4.</span> <span class="nav-text">Android 视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-开发工具"><span class="nav-number">5.</span> <span class="nav-text">Android 开发工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-开源App"><span class="nav-number">6.</span> <span class="nav-text">Android 开源App</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-学习经验分享"><span class="nav-number">7.</span> <span class="nav-text">Android 学习经验分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tikitoo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tikitoo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

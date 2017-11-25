@@ -1,0 +1,756 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="作为一个程序员，应该养成持续学习的能力，随时关注新技术，有时候做起事来会让你事半功倍的效果。之前在知乎上看到下面这个问题，觉得很受用，所有就总结了大牛们的回答，也跟着大牛们的脚步，看看有哪些新技术，也跟着学习学习，涨涨见识。
+
+本文参考@Android 笔记 在知乎的回答：Android 开发有哪些新技术出现？https://www.zhihu.com/question/32037895
+
+And">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 开发有哪些新技术出现？">
+<meta property="og:url" content="http://tikitoo.github.io/2016/01/29/What-new-technologies-have-android/index.html">
+<meta property="og:site_name" content="Tikitoo Blog">
+<meta property="og:description" content="作为一个程序员，应该养成持续学习的能力，随时关注新技术，有时候做起事来会让你事半功倍的效果。之前在知乎上看到下面这个问题，觉得很受用，所有就总结了大牛们的回答，也跟着大牛们的脚步，看看有哪些新技术，也跟着学习学习，涨涨见识。
+
+本文参考@Android 笔记 在知乎的回答：Android 开发有哪些新技术出现？https://www.zhihu.com/question/32037895
+
+And">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg">
+<meta property="og:updated_time" content="2016-01-30T04:25:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 开发有哪些新技术出现？">
+<meta name="twitter:description" content="作为一个程序员，应该养成持续学习的能力，随时关注新技术，有时候做起事来会让你事半功倍的效果。之前在知乎上看到下面这个问题，觉得很受用，所有就总结了大牛们的回答，也跟着大牛们的脚步，看看有哪些新技术，也跟着学习学习，涨涨见识。
+
+本文参考@Android 笔记 在知乎的回答：Android 开发有哪些新技术出现？https://www.zhihu.com/question/32037895
+
+And">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://tikitoo.github.io/2016/01/29/What-new-technologies-have-android/"/>
+
+  <title> Android 开发有哪些新技术出现？ | Tikitoo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72517765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?dd585a1672bc69dcafe1cab0ae54376a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tikitoo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resources">
+          <a href="/resources" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            资源
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            朋友
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 开发有哪些新技术出现？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-29T22:45:25+08:00" content="2016-01-29">
+              2016-01-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/29/What-new-technologies-have-android/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/29/What-new-technologies-have-android/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>作为一个程序员，应该养成持续学习的能力，随时关注新技术，有时候做起事来会让你事半功倍的效果。之前在知乎上看到下面这个问题，觉得很受用，所有就总结了大牛们的回答，也跟着大牛们的脚步，看看有哪些新技术，也跟着学习学习，涨涨见识。</p>
+<blockquote>
+<p>本文参考<a href="weibo.com/devandroid">@Android 笔记</a> 在知乎的回答：<br>Android 开发有哪些新技术出现？<br><a href="https://www.zhihu.com/question/32037895" target="_blank" rel="external">https://www.zhihu.com/question/32037895</a></p>
+</blockquote>
+<h2 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h2><p>Android Studio 是Google 官方推出的全新的Android 开发的IDE，自2013 年发布，目前最新稳定版是1.5。<br>目前Google 官方放弃 Eclipse 的支持，加上Android Studio 普及。AS 虽然不算新，但是对 Android Studio 这个软件的更新速度快的惊人，有大量的新功能发布。<br>例如支持很多注解代码提示注解、Live Code Template、支持自动生成 Parcelable 实现等等，作为开发者，持续关注这个更新列表：<a href="tools.android.com/recent">tools.android.com/recent</a>，一定会让你的写代码的生活更加美好。<br>而且Android 1.0 之后大量的新特性，让我们的开发更便捷，比如Vector Asset，Theme Editor，Gradle 编译速度大幅提升，Android Studio 2.0 的Install Run 实现的实时运行功能。</p>
+<h2 id="Material-Design-设计"><a href="#Material-Design-设计" class="headerlink" title="Material Design 设计"></a>Material Design 设计</h2><p>Android 4.0 的Android Design 留下了诟病，也让Google 下定了决心，在5.0 推出了Material Design 全平台设计语言。它对于每一个点击，每一次滑动都有设计规范。对于设计师和程序员都是值得一看的。</p>
+<blockquote>
+<p>Material Design 设计规范：<a href="https://design.google.com/" target="_blank" rel="external">https://design.google.com/</a></p>
+</blockquote>
+<h2 id="Design-设计支持库"><a href="#Design-设计支持库" class="headerlink" title="Design 设计支持库"></a>Design 设计支持库</h2><p>如果说Material Design 是设计师看的（其实程序员也应该看）。那么的Design 设计支持库，也使得Material Design 设计在Android 中也慢慢实现了。也让没有设计感的程序员也可以制作出惊艳的App。比如Navigation View（侧滑栏），Floating Action Button（悬浮按钮），Snackbar，TabLayout，CoordinatorLayout，App Bar，nestedscrollview。</p>
+<blockquote>
+<p><a href="http://android-developers.blogspot.com/2015/05/android-design-support-library.html" target="_blank" rel="external">http://android-developers.blogspot.com/2015/05/android-design-support-library.html</a></p>
+</blockquote>
+<p>##<strong>Sketch 3</strong><br>这是一个专为设计移动端 UI 的设计工具，作为开发者，不用懂那么复杂的 PS 使用，也可以做非常专业设计：<a href="https://designcode.io/sketch" target="_blank" rel="external">https://designcode.io/sketch</a></p>
+<h2 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h2><p>RecyclerView的几大特性：</p>
+<p><strong>ViewHolder 模式</strong>：在ListView 中需要手动添加ViewHolder 模式，而且不会重用之前的View，RecyclerView默认实现了重用，让绘制View 更加高效。</p>
+<p><strong>LayoutManager </strong>：设置布局，就可以实现单列表，GridView，瀑布流的效果。</p>
+<p><strong>Item Decoration</strong>：自定义各种分割线</p>
+<p><strong>Item Animator</strong>：设置各种炫酷增删动画</p>
+<p> RecyclerView 对于不同类型可以很容易添加。现在很多App 的首页很复杂的内容，样式不一样，使用RecyclerView 很容易解决，还有底部加载更多也很容易实现。</p>
+<h2 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h2><p>作为 Android 领域的 Swift，绝对让你如沐新风。抛弃沉重的 Java 语法，Kotlin 融入了很多现代编程语言的思想，作为开发者，接受新的语言，了解新语言的发展趋势，更有利于开阔你的思路和加深对语言的理解。在 Android 开发上，使用 Kotlin 并不会让你付出什么代价，为什么不来试试？</p>
+<h2 id="Fresco"><a href="#Fresco" class="headerlink" title="Fresco"></a><strong><a href="https://github.com/facebook/fresco" target="_blank" rel="external">Fresco</a></strong></h2><p>Fresco是Facebook最新推出的一款用于Android应用中展示图片的强大图片库，可以从网络、本地存储和本地资源中加载图片。其中的Drawees可以显示占位符，直到图片加载完成。而当图片从屏幕上消失时，会自动释放内存。</p>
+<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><p>React Native 结合了 Web 应用和 Native 应用的优势，可以使用 JavaScript 来开发 iOS 和 Android 原生应用。在 JavaScript 中用 React 抽象操作系统原生的 UI 组件，代替 DOM 元素来渲染等。</p>
+<p>跨平台一直是程序员的梦想，而且移动应用的跨平台解决方案也很多，因为 Facebook 的参与和力推，让这个解决方案带上了光环。第一个用 React Native 开发的 App 已经在 Google Play 上架 <a href="//link.zhihu.com/?target=https%3A//play.google.com/store/apps/details%3Fid%3Dcom.facebook.adsmanager">Facebook 广告管理工具</a>，目前iOS 和Android 版本都已发布，最新版为0.5。</p>
+<h2 id="Dagger-2"><a href="#Dagger-2" class="headerlink" title="Dagger 2"></a>Dagger 2</h2><p>Dagger 2 是Google 主导开发的依赖注入框架，它是基于Dagger 1（由Square 主导开发），利用生成和写的代码混合达到看似所有的产生和提供依赖的代码都是手写的样子，极大减少了使用者的编码负担，也更便于调试，Google 声称提高了13 % 的性能，。</p>
+<h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>我们都知道MVC 模式，MVP 就是基于MVC 的模式上的一个演化版本。在MVC模式中，Activity应该是属于View这一层。而实质上，它既承担了View，同时也包含一些Controller的东西在里面。随着项目的迭代更新，这对开发很不友好，耦合度也原来越高，项目越来越难维护，而MVP 就是解决这样的痛点。把Activity的View和Controller抽离出来就变成了View和Presenter。</p>
+<h2 id="DataBinding-MVVM"><a href="#DataBinding-MVVM" class="headerlink" title="DataBinding MVVM"></a>DataBinding <strong>MVVM</strong></h2><p>DataBinding 即数据绑定，在前端的框架有很广泛的使用，比如像AngularJS，就支持双向绑定。<br>所谓MVVM，像Activity，Fragment，View 都属于View 这一层；Model层主要负责数据相关部分，可以从数据库或者网络获取；ViewModel主要是把Model转换为View 可以呈现的东西，例如把一个Date 类型转化为格式化后的String，也就是将前面两者联系在一起的对象，<br>在Data Binding 支持下，会根据layout 文件名自动生成一个相对应的Binding（比如activity_main，对应生成MainActivityDataBinding 对象），数据绑定在Layout文件中XML标注。<br>在Google I/O 2015上，伴随着Android M预览版发布的Data Binding 兼容函数库改变了这一切。而在Android Studio 2.5 的预览版，Data Binding 在XML 中也终于有了代码提示功能。</p>
+<h2 id="RxJava-RxAndroid"><a href="#RxJava-RxAndroid" class="headerlink" title="RxJava/RxAndroid"></a>RxJava/RxAndroid</h2><p>RxJava一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库。用简单的一个词来介绍就是“异步”。<br>它提供了基于Observable（观察者） 序列实现的异步调用及基于事件编程。<br>它扩展了观察者模式，支持数据、事件序列并允许你合并序列，无需关心底层的线程处理、同步、线程安全、并发数据结构和非阻塞I/O处理。<br>它支持Java5 及更高版本，并支持其他一些基于JVM的语言，如Groovy、Clojure和Scala。而且他能和Retrofit 更好的结合使用，也有相对应的RxBus 等框架结合。</p>
+<h2 id="Espresso-2-0"><a href="#Espresso-2-0" class="headerlink" title="Espresso 2.0"></a>Espresso 2.0</h2><p>近些年，随着Android社区的成熟，出现了诸如Robotium，Robolectric等的优秀测试框架。而Google也在近期推出了自己的UI测试框架Espresso。<br>Espresso 是一个提供了简单 API 的用于 Android App UI 测试的测试框架。最新的 2.0 版本发布后已经可以在 Android Support Repository 中下载了，那么在项目中集成它就方便多了。它的API 很小，对外扩张开放，测试跑起来那是相当的快，对Gradle 和Android Studio 支持。</p>
+<h2 id="Baas"><a href="#Baas" class="headerlink" title="Baas"></a>Baas</h2><p>Baas 又称mBaas，全称叫Backend as a Service（后端作为一种服务）， 怎么说呢，为移动应用开发者提供后端服务；作为一个移动应用开发者（Android &amp; iPhone），除了开发应用程序，还要做后台的服务器端，当然，大多移动应用开发者并非都懂后端开发， 这让一个应用应用开发者开发一款应用不容易，然而有了Baas，开发者就可以不用管后端开发了，Baas 提供商，提供了我们最常用的功能，比如数据存储，应用分析，IM 等功能，让开发者把主要精力放在应用本身，大大提高了效率。<br>当然也不一定是移动应用开发者，当然也可以Web 开发，当初Baas 主要是为了解决移动应用开发者的后端服务问题，Baas 也提供其他的服务；国外类似Parse，Firebase，国内像LeanCloud 都是提供这样的服务。</p>
+<h2 id="App-Indexing"><a href="#App-Indexing" class="headerlink" title="App Indexing"></a>App Indexing</h2><p>我们都知道网页是一个一个超链接相连的，然而在移动互联网时代，每个App 里的数据就想信息孤岛，App Indexing 就是要打破这样的尴尬，只要你在App 实现App Indexing 功能，你的App 里的数据，就会出现在Google 的搜索结果中，尤其是出海的App，这个功能尤其重要，据说Google 打算实现在网页中直接安装App。</p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.zhihu.com/question/32037895" target="_blank" rel="external">Android 开发有哪些新技术出现？</a></li>
+<li><a href="http://stackoverflow.com/questions/26570325/what-are-recycler-view-advantages-compared-to-listview" target="_blank" rel="external">android - what are recycler view advantages compared to listview - Stack Overflow</a></li>
+<li><a href="http://jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0601/2962.html" target="_blank" rel="external">关于Android的Data Binding技术 - 泡在网上的日子</a></li>
+<li><a href="http://www.importnew.com/8321.html" target="_blank" rel="external">在安卓上使用RxJava - ImportNew</a></li>
+<li><a href="https://github.com/bboyfeiyu/android-tech-frontier/blob/master/issue-11/Android-Espresso%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D.md" target="_blank" rel="external">Android-Espresso测试框架介绍 - bboyfeiyu/android-tech-frontier</a></li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><br></h2><p><img src="http://ww2.sinaimg.cn/large/68622377gw1f00ivyo4lsj20760760t7.jpg" alt="安卓同学的公众号，更多分享..."></p>
+<center>Tikitoo 的公众号，更多分享…</center>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Tikitoo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注我的公众号：安卓同学（ID：AndroidMate）</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/23/reading-list_programmer_interest_ted/" rel="next" title="每周阅读清单：程序员修炼，兴趣，TED">
+                <i class="fa fa-chevron-left"></i> 每周阅读清单：程序员修炼，兴趣，TED
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/01/android_medium_guide/" rel="prev" title="Android 开发进阶指南">
+                Android 开发进阶指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/29/What-new-technologies-have-android/"
+           data-title="Android 开发有哪些新技术出现？" data-url="http://tikitoo.github.io/2016/01/29/What-new-technologies-have-android/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/mw690/68622377jw1etahntwg7pj2050050q2q.jpg"
+               alt="Tikitoo" />
+          <p class="site-author-name" itemprop="name">Tikitoo</p>
+          <p class="site-description motion-element" itemprop="description">Android 开发工程师，互联网爱好者。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tikitoo" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/tikitoo" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lyf0306" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/tikitoo" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  Douban
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tikitoo" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/c35153600475/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-jianshu"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio"><span class="nav-number">1.</span> <span class="nav-text">Android Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-Design-设计"><span class="nav-number">2.</span> <span class="nav-text">Material Design 设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-设计支持库"><span class="nav-number">3.</span> <span class="nav-text">Design 设计支持库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView"><span class="nav-number">4.</span> <span class="nav-text">RecyclerView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin"><span class="nav-number">5.</span> <span class="nav-text">Kotlin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fresco"><span class="nav-number">6.</span> <span class="nav-text">Fresco</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native"><span class="nav-number">7.</span> <span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dagger-2"><span class="nav-number">8.</span> <span class="nav-text">Dagger 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">9.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataBinding-MVVM"><span class="nav-number">10.</span> <span class="nav-text">DataBinding MVVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RxJava-RxAndroid"><span class="nav-number">11.</span> <span class="nav-text">RxJava/RxAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Espresso-2-0"><span class="nav-number">12.</span> <span class="nav-text">Espresso 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baas"><span class="nav-number">13.</span> <span class="nav-text">Baas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-Indexing"><span class="nav-number">14.</span> <span class="nav-text">App Indexing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">15.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">16.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tikitoo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tikitoo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,776 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android,mobile,baas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="作为开发者，了解新技术，新的工具是必不可少的，有时候发现一个好的开发工具，使用起来非常顺手，效率也提高了， 然而如果不了解新的技术，不了解这个行业的发展趋势，那样的后果是不堪回首的，反正，与时俱变是没有错啦，所以今天就来说说每个移动开发者都应该知道的Baas。
+那么什么是Baas？
+前一段时间在知乎上看到AVOSCloud（现在改名叫LeanCloud 了），不知道这是什么东西，偶尔在微博看到有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作为移动开发者，你应该了解Baas（后端即服务）">
+<meta property="og:url" content="http://tikitoo.github.io/2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/index.html">
+<meta property="og:site_name" content="Tikitoo Blog">
+<meta property="og:description" content="作为开发者，了解新技术，新的工具是必不可少的，有时候发现一个好的开发工具，使用起来非常顺手，效率也提高了， 然而如果不了解新的技术，不了解这个行业的发展趋势，那样的后果是不堪回首的，反正，与时俱变是没有错啦，所以今天就来说说每个移动开发者都应该知道的Baas。
+那么什么是Baas？
+前一段时间在知乎上看到AVOSCloud（现在改名叫LeanCloud 了），不知道这是什么东西，偶尔在微博看到有">
+<meta property="og:image" content="http://cdn.pingwest.com/wp-content/uploads/2014/12/BaaS.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/68622377gw1eqmpbo4ugzj209k09kmx3.jpg">
+<meta property="og:updated_time" content="2015-07-01T09:49:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作为移动开发者，你应该了解Baas（后端即服务）">
+<meta name="twitter:description" content="作为开发者，了解新技术，新的工具是必不可少的，有时候发现一个好的开发工具，使用起来非常顺手，效率也提高了， 然而如果不了解新的技术，不了解这个行业的发展趋势，那样的后果是不堪回首的，反正，与时俱变是没有错啦，所以今天就来说说每个移动开发者都应该知道的Baas。
+那么什么是Baas？
+前一段时间在知乎上看到AVOSCloud（现在改名叫LeanCloud 了），不知道这是什么东西，偶尔在微博看到有">
+<meta name="twitter:image" content="http://cdn.pingwest.com/wp-content/uploads/2014/12/BaaS.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://tikitoo.github.io/2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/"/>
+
+  <title> 作为移动开发者，你应该了解Baas（后端即服务） | Tikitoo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72517765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?dd585a1672bc69dcafe1cab0ae54376a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tikitoo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resources">
+          <a href="/resources" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            资源
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            朋友
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                作为移动开发者，你应该了解Baas（后端即服务）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-12T11:17:00+08:00" content="2015-04-12">
+              2015-04-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://cdn.pingwest.com/wp-content/uploads/2014/12/BaaS.jpg" alt="Baas（题图来自 [PingWest](http://www.pingwest.com/baas/)）"></p>
+<p>作为开发者，了解新技术，新的工具是必不可少的，有时候发现一个好的开发工具，使用起来非常顺手，效率也提高了， 然而如果不了解新的技术，不了解这个行业的发展趋势，那样的后果是不堪回首的，反正，与时俱变是没有错啦，所以今天就来说说每个移动开发者都应该知道的Baas。</p>
+<h2 id="那么什么是Baas？"><a href="#那么什么是Baas？" class="headerlink" title="那么什么是Baas？"></a>那么什么是Baas？</h2><hr>
+<p>前一段时间在知乎上看到AVOSCloud（现在改名叫LeanCloud 了），不知道这是什么东西，偶尔在微博看到有人说在用， 昨天有无意间看到了，就索性把这个弄清楚了，这个东西叫Baas（又称mBaas），全称叫Backend as a Service（后端作为一种服务）， 怎么说呢，为移动应用开发者提供后端服务； 作为一个移动应用开发者（Android &amp; iPhone），除了开发应用程序，还要做后台的服务器端，当然，大多移动应用开发者并非都懂后端开发， 这让一个应用应用开发者开发一款应用不容易，然而有了Baas，开发者就可以不用管后端开发了，Baas 提供商，提供了我们最常用的功能，比如数据存储，应用分析，IM 等功能，让开发者把主要精力放在应用本身，大大提高了效率； 当然也不一定是移动应用开发者，当然也可以Web 开发，当初Baas 主要是为了解决移动应用开发者的后端服务问题，Baas 也提供其他的服务；</p>
+<h2 id="那么Baas-都提供哪些服务呢？"><a href="#那么Baas-都提供哪些服务呢？" class="headerlink" title="那么Baas 都提供哪些服务呢？"></a>那么Baas 都提供哪些服务呢？</h2><hr>
+<p>以<a href="https://www.parse.com/" target="_blank" rel="external">Parse</a> 为例，主要有以下功能：</p>
+<ul>
+<li>消息推送</li>
+<li>数据分析</li>
+<li>保存数据到云平台</li>
+<li>简单的社交服务</li>
+<li>本地数据储存</li>
+<li>在云服务上运行客户端代码</li>
+<li>后台工作</li>
+<li>实时查看应用程序的数据，数据推送，日志等</li>
+</ul>
+<p>其实可以吐槽一下，其实实现的功能比较基础的，一般有后端开发经验的开发者，也不是什么难事，但是自己要搭建服务器，还要一系列的服务要实现， 也是费时费工，有这样的服务，提供的简单的API，使用起来上手非常容易，也提供了一些 Demo，只要自己在服务后台创建应用，申请API_ID，API_KEY就可以使用。</p>
+<h2 id="Baas-服务商都有哪些呢？"><a href="#Baas-服务商都有哪些呢？" class="headerlink" title="Baas 服务商都有哪些呢？"></a>Baas 服务商都有哪些呢？</h2><hr>
+<blockquote>
+<p>2013年4月，Facebook收购Parse；2014年6月，苹果在一年一度的WWDC上发布了CloudKit；等到了2014年10月份，Google也出手收购了Firebase。<br>——来自 <a href="http://www.pingwest.com/baas/" target="_blank" rel="external">PingWest</a></p>
+</blockquote>
+<p>从巨头的态度，就已经看出他们对Baas 的态度，能让移动开发更家简单，才会吸引更多的开发者；当然Baas 的厂商也是层出不穷，而且提供的功能也有各部相同，所以作为一个移动开发者，选择一个适合自己的服务尤为重要，所以接下来就给大家介绍几个知名的Baas 服务，以及他们的提供的功能。</p>
+<blockquote>
+<h2 id="Appcelerator-Cloud"><a href="#Appcelerator-Cloud" class="headerlink" title="Appcelerator Cloud"></a><a href="http://www.appcelerator.com/cloud/" target="_blank" rel="external">Appcelerator Cloud</a></h2><p>它要依赖Appcelerator Titanium SDK 一起使用，官方宣称目前共有265728526 设备运行着Appcelerator Cloud 服务提供的应用程序，客户不乏有Ebay，vmWare；</p>
+<h3 id="Parse"><a href="#Parse" class="headerlink" title="Parse"></a><a href="https://www.parse.com/" target="_blank" rel="external">Parse</a></h3><hr>
+<p>也算是特别出名的，刚刚介绍Baas 的时候，就拿它当例子，他的出名更归功于跟了Facebook；</p>
+<h3 id="UserGrid"><a href="#UserGrid" class="headerlink" title="UserGrid"></a><a href="http://usergrid.incubator.apache.org/" target="_blank" rel="external">UserGrid</a></h3><hr>
+<p>Apache 提供了一个Baas 框架，支持多平台，</p>
+<h3 id="LeanCloud（AVOSCloud）"><a href="#LeanCloud（AVOSCloud）" class="headerlink" title="LeanCloud（AVOSCloud）"></a><a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud（AVOSCloud）</a></h3><hr>
+<p>LeanCloud 和Facebook Parse 提供的重合度很高</p>
+<ul>
+<li>社交IM 服务</li>
+<li>消息推送服务</li>
+<li>数据分析</li>
+<li>支持任何类型的结构化 / 半结构化数据，还有地理位置存储</li>
+<li>并且提供CDN 存储</li>
+<li>云代码</li>
+<li>集成GitHub、Bitbucket 或 CSDNCode</li>
+<li>对每一个应用，每个月免费提供 500 万次的请求配额</li>
+</ul>
+</blockquote>
+<p>除了上面这些，国外的比如<a href="http://www.kinvey.com/" target="_blank" rel="external">Kinvey</a>，<a href="https://www.stackmob.com/" target="_blank" rel="external">StackMob</a>，<a href="http://www.applicasa.com/" target="_blank" rel="external">Applicasa</a>，名气都是很大，他们提供的功能大都很全，很强大，当然也有提供专有的服务，比如消息推送，IM，分享等等，就不意义介绍了。</p>
+<p>下面就说说国内的，国内的Baas 服务随着国内移动开发的的热潮，也如雨后春笋般发展，比如：</p>
+<ul>
+<li><strong><a href="http://www.umeng.com/" target="_blank" rel="external">友盟</a></strong>，提供了应用分析，消息推送社会化分析，如果你仔细注意，友盟已经被阿里收购，也看出国内的巨头也对Baas 足够的重视；</li>
+<li><strong><a href="http://sharesdk.mob.com/" target="_blank" rel="external">Mob - ShareSDK</a></strong>，又比如专门做社会化分享的，几乎集成了国内外的主流社交网站；</li>
+<li><strong><a href="https://www.jpush.cn/" target="_blank" rel="external">极光推送</a></strong>，专门做推送服务；</li>
+</ul>
+<p>除了上面的这些，还有其他的比如应用测试，应用分析等等很多，就不一一列举了。</p>
+<p>到了最后，选择一款适合的自己的Baas 服务也是不易的，比如要考虑到以后发展的扩展，各种Baas 的对比，Baas 服务的安全问题等等都是我们该考虑的问题。</p>
+<p><br></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<ul>
+<li><a href="http://www.pingwest.com/baas/" target="_blank" rel="external">你可能没听说过的BaaS，却是Facebook、苹果和Google同时盯上的领域</a></li>
+<li><a href="http://www.infoq.com/cn/articles/the-definition-development-and-future-of-baas-services" target="_blank" rel="external">BaaS服务的定义、发展以及未来</a></li>
+<li><a href="http://tikitoo.github.io/blog/cloud%20platform/2014/11/28/baas-detail.html">了解Baas（Backend as a Service） - Tikitoo Blog</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>本文作者：<a href="http://weibo.com/lyf0306" target="_blank" rel="external">Tikitoo</a><br>本文出处：<a href="http://www.jianshu.com/p/48384a8831de" target="_blank" rel="external">http://www.jianshu.com/p/48384a8831de</a><br>转载请在开头注明<code>作者详细信息</code>和<code>本文出处</code>。</p>
+<p>欢迎关注我的微信公众号，分享<code>Android 开发</code>和<code>互联网内容</code>。<br>微信号：<a href="http://weixin.sogou.com/gzh?openid=oIWsFt0tWyaAMPcOVIEsvZcHnPXA" target="_blank" rel="external">AndroidMate</a><br><img src="http://ww3.sinaimg.cn/mw690/68622377gw1eqmpbo4ugzj209k09kmx3.jpg" alt="安卓同学"></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Tikitoo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注我的公众号：安卓同学（ID：AndroidMate）</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+            <a href="/tags/mobile/" rel="tag">#mobile</a>
+          
+            <a href="/tags/baas/" rel="tag">#baas</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/11/how-do-i-self-study-android-2015/" rel="next" title="我是如何自学Android，资料分享（2015）">
+                <i class="fa fa-chevron-left"></i> 我是如何自学Android，资料分享（2015）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/04/18/android-the-development-of-essential-little-knowledge/" rel="prev" title="Android 开发必备小知识点">
+                Android 开发必备小知识点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/"
+           data-title="作为移动开发者，你应该了解Baas（后端即服务）" data-url="http://tikitoo.github.io/2015/04/12/as-a-moblile-developer-you-should-know-baas-backend-as-a-service/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/mw690/68622377jw1etahntwg7pj2050050q2q.jpg"
+               alt="Tikitoo" />
+          <p class="site-author-name" itemprop="name">Tikitoo</p>
+          <p class="site-description motion-element" itemprop="description">Android 开发工程师，互联网爱好者。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tikitoo" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/tikitoo" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lyf0306" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/tikitoo" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  Douban
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tikitoo" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/c35153600475/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-jianshu"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#那么什么是Baas？"><span class="nav-number">1.</span> <span class="nav-text">那么什么是Baas？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么Baas-都提供哪些服务呢？"><span class="nav-number">2.</span> <span class="nav-text">那么Baas 都提供哪些服务呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baas-服务商都有哪些呢？"><span class="nav-number">3.</span> <span class="nav-text">Baas 服务商都有哪些呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appcelerator-Cloud"><span class="nav-number">4.</span> <span class="nav-text">Appcelerator Cloud</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Parse"><span class="nav-number">4.1.</span> <span class="nav-text">Parse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UserGrid"><span class="nav-number">4.2.</span> <span class="nav-text">UserGrid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LeanCloud（AVOSCloud）"><span class="nav-number">4.3.</span> <span class="nav-text">LeanCloud（AVOSCloud）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tikitoo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tikitoo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

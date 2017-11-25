@@ -1,0 +1,737 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Android Studio," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="我们都知道Git，现在基本上标配的代码管理工具，它的诸多优点也让它脱颖而出，我们工作中也大都使用Git。
+但是我们使用Android Studio 来开发App，一般我们会使用命令行来Push（提交），Pull（更新），Merge（合并）代码，这样来回切换，觉得非常不方便。
+如果我们直接能在Android Studio 上直接执行上面的一系列操作，肯定会提高很多效率。所以这篇文章，就是使用Andr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Android Studio 中使用Git">
+<meta property="og:url" content="http://tikitoo.github.io/2017/07/06/android-studio-use-git/index.html">
+<meta property="og:site_name" content="Tikitoo Blog">
+<meta property="og:description" content="我们都知道Git，现在基本上标配的代码管理工具，它的诸多优点也让它脱颖而出，我们工作中也大都使用Git。
+但是我们使用Android Studio 来开发App，一般我们会使用命令行来Push（提交），Pull（更新），Merge（合并）代码，这样来回切换，觉得非常不方便。
+如果我们直接能在Android Studio 上直接执行上面的一系列操作，肯定会提高很多效率。所以这篇文章，就是使用Andr">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upeh25nj21qm16843n.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upejx2uj20xa0u2ths.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upethy2j213u12yncl.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upf6qp8j210614sh0q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upf7fstj21kd1bkqmq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upern20j228019ywto.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upefzk0j20pk0cwdhf.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upem78aj22700mw7cu.jpg">
+<meta property="og:updated_time" content="2017-07-06T00:37:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Android Studio 中使用Git">
+<meta name="twitter:description" content="我们都知道Git，现在基本上标配的代码管理工具，它的诸多优点也让它脱颖而出，我们工作中也大都使用Git。
+但是我们使用Android Studio 来开发App，一般我们会使用命令行来Push（提交），Pull（更新），Merge（合并）代码，这样来回切换，觉得非常不方便。
+如果我们直接能在Android Studio 上直接执行上面的一系列操作，肯定会提高很多效率。所以这篇文章，就是使用Andr">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/68622377ly1fh9upeh25nj21qm16843n.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://tikitoo.github.io/2017/07/06/android-studio-use-git/"/>
+
+  <title> 在Android Studio 中使用Git | Tikitoo Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72517765-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?dd585a1672bc69dcafe1cab0ae54376a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tikitoo Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resources">
+          <a href="/resources" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            资源
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            朋友
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在Android Studio 中使用Git
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-06T08:43:30+08:00" content="2017-07-06">
+              2017-07-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/06/android-studio-use-git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/06/android-studio-use-git/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我们都知道Git，现在基本上标配的代码管理工具，它的诸多优点也让它脱颖而出，我们工作中也大都使用Git。</p>
+<p>但是我们使用Android Studio 来开发App，一般我们会使用命令行来Push（提交），Pull（更新），Merge（合并）代码，这样来回切换，觉得非常不方便。</p>
+<p>如果我们直接能在Android Studio 上直接执行上面的一系列操作，肯定会提高很多效率。<br>所以这篇文章，就是使用Android Studio 如何执行一系列的Git 功能。</p>
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p>当然虽然IDE 集成了，但是也脱离不了Git 原生的工具，所以首先要安装Git，大家可以参考下面的链接，可以切换成中文，Win，Mac，Linux 都有对应的安装方式，大家对号入座。</p>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="external">Git - Installing Git</a></li>
+</ul>
+<p>安装之后，就需要在Android Studio 中配置了。<br><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upeh25nj21qm16843n.jpg" alt=""><br>添加Git 仓库，如果没有远程仓库，需要自己使用命令行添加。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin https://github.com/Tikitoo/Android-PickerView.git</span><br></pre></td></tr></table></figure>
+<p>第一次添加的项目，需要在这里配置一下，表示它是Git 项目，Android Studio 才会识别。<br><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upejx2uj20xa0u2ths.jpg" alt=""></p>
+<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>但是提交代码前，我们要注意一下忽略文件—— <strong>.gitignore</strong> ，这个如果没有添加。Android Studio 有个插件叫—— <strong>ignore</strong> ，可以去搜索安装，安装之后，在顶级目录，右键—&gt; New —&gt; ignore file —&gt; .gitignore file，还可以选择不同的语言和框架，我们选择Android 就行了。<br>就会自动生成，它会自动添加一些不必要提交服务器的文件，比如apk，build/ 等等。<br>如果没有添加 <strong>.gitignore</strong> 文件，所有文件将都将会提交，如果再添加 <strong>.gitignore</strong> ，则会报错，你需要在，设置中 —&gt; Version Control 将初始化的Git 目录移除，然后需要上个步骤再配置一下就好了。<br>一定要注意要先添加忽略文件。</p>
+<h2 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h2><p>经过了一些列的配置，我们就可以来提交代码了。<br>我们都知道使用Git，需要经过一系列的Add，Commit，Push。<br>Android 中可以可以通过两种方式来提交代码。</p>
+<h3 id="文件夹形式"><a href="#文件夹形式" class="headerlink" title="文件夹形式"></a>文件夹形式</h3><p> <img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upethy2j213u12yncl.jpg" alt=""><br>通过文件夹，右键 Git —&gt; Commit Directory。<br>通过文件夹的形式直接提交代码，这个时候一定要注意自己所在的目录，以免不在顶级目录，而少提交了文件。<br>我比较喜欢通过文件夹的形式，这样写完代码，文件夹目录更加熟悉，就可以直接提交了。</p>
+<h3 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h3><p><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upf6qp8j210614sh0q.jpg" alt=""><br>通过顶部菜单栏，VCS —&gt; Git —&gt; Commit Directory，就可以执行一系列操作了。<br>菜单栏，一提交就是全部文件。</p>
+<p><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upf7fstj21kd1bkqmq.jpg" alt=""><br>需要注意的是，当有的文件没有Add，直接Commit，它也会显示出来，只是默认不勾选，勾选一下就相当于Add 了。<br>这里有一个比较黑科技功能，反正我是经常使用。</p>
+<h3 id="Review-Code-功能"><a href="#Review-Code-功能" class="headerlink" title="Review Code 功能"></a>Review Code 功能</h3><p>在这个菜单栏，双击文件，就会进入代码对比的页面，看下下图。<br><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upern20j228019ywto.jpg" alt=""><br><strong>左边的上下箭头</strong> ，可以跳转到下一处不同。<br><strong>右边</strong> 显示当前文件差异的次数。<br>左右两栏，分别显示 <strong>当前的本地的代码</strong> 和 <strong>服务器的代码</strong> ；当有冲突，就会变成三栏，你还可以手动来合并代码，很实用。<br>当我们写完一个功能，使用这个方法尤其好用，可以很清晰地看出哪些代码没有，或者不合理的数据，亦或者是测试数据，就可以修改完在提交，以免对其他开发和测试造成影响，也是对自己的代码负责。</p>
+<h2 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h2><p><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upefzk0j20pk0cwdhf.jpg" alt=""><br>分支切换，显示在 <strong>右下角</strong> 的工具栏。<br>它会显示本地分支和远程分支，<br>你可以随意切换，创建新的分支，当你Push，它会默认给服务器创建对应的分支。<br>它还有 <strong>分支对比</strong> 功能，它可以对比不同的分支不同的代码。<br>还有 <strong>一键Merge，Rebase，删除</strong> 功能。</p>
+<h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><p><img src="http://ww1.sinaimg.cn/large/68622377ly1fh9upem78aj22700mw7cu.jpg" alt=""><br><strong>Local Change</strong> ：本地 修改/ 添加 / 删除 的文件。<br><strong>Log</strong> ：这个窗口是可以查看提交记录，你还可以过滤分支，团队的不同用户，日期，以及文件夹。<br><strong>Console</strong> ：这个会显示你执行操作的Git 命令。<br>当然每次更新代码，它也会显示更新修改的文件。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>当然使用命令行，第三方的Git 客户端，亦或者使用Android Studio 集成的Git，没有孰好孰坏，在这里只是给大家提供一个选择的方式，当然也与不同人的习惯有关，仅此而已。<br>而我自己的感受是，IDE 的便利让我的效率提升了许多，它只会在你原有的基础上有了提升。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Tikitoo wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎关注我的公众号：安卓同学（ID：AndroidMate）</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Android-Studio/" rel="tag">#Android Studio</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/02/recent-thinking-about-me/" rel="next" title="最近的思考">
+                <i class="fa fa-chevron-left"></i> 最近的思考
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/26/Blog-article-name/" rel="prev" title="Blog article name">
+                Blog article name <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/07/06/android-studio-use-git/"
+           data-title="在Android Studio 中使用Git" data-url="http://tikitoo.github.io/2017/07/06/android-studio-use-git/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/mw690/68622377jw1etahntwg7pj2050050q2q.jpg"
+               alt="Tikitoo" />
+          <p class="site-author-name" itemprop="name">Tikitoo</p>
+          <p class="site-description motion-element" itemprop="description">Android 开发工程师，互联网爱好者。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tikitoo" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/tikitoo" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lyf0306" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/tikitoo" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-douban"></i>
+                  
+                  Douban
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tikitoo" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/c35153600475/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-jianshu"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略文件"><span class="nav-number">2.</span> <span class="nav-text">忽略文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交代码"><span class="nav-number">3.</span> <span class="nav-text">提交代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件夹形式"><span class="nav-number">3.1.</span> <span class="nav-text">文件夹形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单栏"><span class="nav-number">3.2.</span> <span class="nav-text">菜单栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-Code-功能"><span class="nav-number">3.3.</span> <span class="nav-text">Review Code 功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支切换"><span class="nav-number">4.</span> <span class="nav-text">分支切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version-Control"><span class="nav-number">5.</span> <span class="nav-text">Version Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">6.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tikitoo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tikitoo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
